@@ -3,49 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Validaciones JS</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <h1>Complete the form:</h1>
+    <h1>Completa el formulario:</h1>
 
     <form>
       <input
         type="text"
         name="first-name"
         id="input-first-name"
-        placeholder="first name"
+        placeholder="Nombre"
+        maxlength="25"
       />
       <input
         type="text"
         name="last-name"
         id="input-last-name"
-        placeholder="last name"
+        placeholder="Apellido"
+        maxlength="25"
       />
 
       <input
         type="text"
         name="username"
         id="input-username"
-        placeholder="username"
+        placeholder="Nombre de usuario"
+        maxlength="25"
       />
 
       <input
         type="password"
         name="password"
         id="input-password"
-        placeholder="password"
+        placeholder="Contraseña"
+        maxlength="25"
       />
       <input
         type="password"
         name="confirm-password"
         id="input-confirm-password"
-        placeholder="confirm password"
+        placeholder="Confirmá la contraseña"
+        maxlength="25"
+        onchange="testPasswords"
       />
 
       <div id="div-birthday">
-        <label>You birthday:</label>
+        <label>Tu fecha de cumpleaños:</label>
         <input type="date" name="birthday" id="input-birthday" />
       </div>
 
@@ -58,8 +64,8 @@
         />
       </div>
 
-      <button type="submit" id="button-submit" onclick="clickSubmit">
-        Submit
+      <button type="button" id="button-submit" onclick="submitData">
+        Enviar
       </button>
     </form>
 

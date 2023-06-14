@@ -9,21 +9,21 @@ const submitButton = document.getElementById("button-submit");
 
 getFirstName.addEventListener("change", () => {
   const value = getFirstName.value.trim();
-  const regex = /^[A-Za-z]+$/;
+  const regex = /^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/;
 
   if (!regex.test(value)) {
     alert("Debes ingresar solamente texto, no números ni símbolos");
-    getFirstName.value=''
+    getFirstName.value = "";
   }
 });
 
 getLastName.addEventListener("change", () => {
-  const value = getFirstName.value.trim();
-  const regex = /^[A-Za-z]+$/;
+  const value = getLastName.value.trim();
+  const regex = /^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/;
 
   if (!regex.test(value)) {
     alert("Debes ingresar solamente texto, no números ni símbolos");
-    getLastName.value=''
+    getLastName.value = "";
   }
 });
 
@@ -32,11 +32,45 @@ getUsername.addEventListener("change", () => {
   const regex = /^[A-Za-z]\w{5,29}$/;
 
   if (!regex.test(value)) {
-    alert("No puedes tener espacios ni símbolos en tu nombre de usuario");
-    getUsername.value=''
+    alert(
+      "Sólo puedes agregar letras, números y _ , sin espacios ni otros símbolos"
+    );
+    getUsername.value = "";
   }
 });
 
+const testPasswords = () => {
+  const firstPassword = getPassword.value;
+  const secondPassword = getConfirmPassword.value;
 
+  if (firstPassword !== secondPassword) {
+    alert("Las contraseñas no coinciden");
+    getConfirmPassword.value = "";
+  }
+};
+getConfirmPassword.addEventListener("change", testPasswords);
 
-submitButton.addEventListener("click", () => alert("submit"));
+getNewsletter.addEventListener("change", () => {
+  if (getNewsletter.checked) {
+    alert("Recibirás todas nuestras novedades");
+  } else {
+    alert("No recibirás nuestras novedades");
+  }
+});
+
+const submitData = () => {
+  if (
+    !getFirstName.value ||
+    !getLastName.value ||
+    !getUsername.value ||
+    !getPassword.value ||
+    !getConfirmPassword.value ||
+    !getBirthday.value
+  ) {
+    alert(" Debes completar todos los campos");
+  } else {
+    alert("Tus datos están correctos");
+    window.location.reload();
+  }
+};
+submitButton.addEventListener("click", submitData);

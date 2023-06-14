@@ -1,12 +1,22 @@
+:root {
+  --background: #eae2b7;
+  --text: #003049;
+  --inputselected: #fcbf49;
+  --details: #ffb703;
+}
+
 * {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color: azure;
+  background-color: var(--background);
+  color: var(--text);
 }
 
 h1 {
+  font-size: 2.5rem;
+  text-shadow: 2px 4px 0px var(--details);
   text-align: center;
-  margin: 2em 1em 1em;
+  margin: 1em 1em 1em;
   text-transform: uppercase;
 }
 
@@ -19,18 +29,18 @@ input,
 button,
 div {
   margin: 0 auto;
-  font-size: 1.3rem;
+  font-size: 1rem;
   text-transform: uppercase;
 }
 
 input {
   width: 30%;
-  padding: 1em;
+  padding: 0.5em;
   margin-bottom: 1em;
   border-top: none;
   border-left: none;
   display: flex;
-  border-color: slateblue;
+  border-color: var(--details);
   border-width: 3px;
 }
 
@@ -40,7 +50,7 @@ input {
 }
 
 input:focus {
-  background-color: aquamarine;
+  background-color: var(--inputselected);
   outline: none;
   transition: 0.2s;
 }
@@ -62,6 +72,8 @@ input:focus {
 
 label {
   padding-right: 1em;
+  font-weight: bold;
+  text-shadow: 1px 3px 0px var(--details);
 }
 
 #input-birthday,
@@ -71,9 +83,14 @@ label {
 
 button {
   padding: 0.5em 1em;
+  font-weight: bold;
+  border: none;
+  background-color: var(--details);
+  margin-bottom: 1em;
 }
 
 button:hover {
-  background-color: violet;
+  background-color: var(--text);
+  color: var(--background);
   transition: 0.2s;
 }
