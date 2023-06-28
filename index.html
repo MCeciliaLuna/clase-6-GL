@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Validaciones JS</title>
+    <title>Formulario y validaciones con JS</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -11,48 +11,60 @@
     <h1>Completa el formulario:</h1>
 
     <form>
+      <label>
+        NOMBRE
       <input
         type="text"
         name="first-name"
-        id="input-first-name"
-        placeholder="Nombre"
+        id="first-name"
+        placeholder="Ej: 'Cecilia'"
         maxlength="25"
       />
+    </label>
+    <label>
+      APELLIDO:
       <input
         type="text"
         name="last-name"
-        id="input-last-name"
-        placeholder="Apellido"
+        id="last-name"
+        placeholder="Ej: Luna"
         maxlength="25"
       />
-
+    </label>
+    <label>
+      NOMBRE DE USUARIO:
       <input
         type="text"
         name="username"
-        id="input-username"
-        placeholder="Nombre de usuario"
+        id="username"
+        placeholder="ceciluna23"
         maxlength="25"
       />
-
-      <input
-        type="password"
-        name="password"
-        id="input-password"
-        placeholder="Contraseña"
-        maxlength="25"
-      />
-      <input
-        type="password"
-        name="confirm-password"
-        id="input-confirm-password"
-        placeholder="Confirmá la contraseña"
-        maxlength="25"
-        onchange="testPasswords"
-      />
+    </label>
+<label>
+  CONTRASEÑA:
+  <input
+    type="password"
+    name="password"
+    id="password"
+    placeholder="ej: 'gatitos1234'"
+    maxlength="25"
+    />
+  </label>
+  <label>
+    CONFIRMÁ LA CONTRASEÑA:
+  <input
+  type="password"
+  name="confirm-password"
+  id="confirm-password"
+  placeholder="Confirmá la contraseña"
+  maxlength="25"
+  />
+</label>
 
       <div id="div-birthday">
         <label>Tu fecha de cumpleaños:</label>
-        <input type="date" name="birthday" id="input-birthday" />
+        <input type="date" name="birthday" id="birthday" />
       </div>
 
       <div id="div-newsletter">
@@ -60,11 +72,11 @@
         <input
           type="checkbox"
           name="check-newsletter"
-          id="input-check-newsletter"
+          id="check-newsletter"
         />
       </div>
 
-      <button type="button" id="button-submit" onclick="submitData">
+      <button type="button" id="submit">
         Enviar
       </button>
     </form>

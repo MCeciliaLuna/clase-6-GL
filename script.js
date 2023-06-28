@@ -1,76 +1,80 @@
-const getFirstName = document.getElementById("input-first-name");
-const getLastName = document.getElementById("input-last-name");
-const getUsername = document.getElementById("input-username");
-const getPassword = document.getElementById("input-password");
-const getConfirmPassword = document.getElementById("input-confirm-password");
-const getBirthday = document.getElementById("input-birthday");
-const getNewsletter = document.getElementById("input-check-newsletter");
-const submitButton = document.getElementById("button-submit");
+const inputFirstName = document.getElementById("first-name");
+const inputLastName = document.getElementById("last-name");
+const inputUsername = document.getElementById("username");
+const inputPassword = document.getElementById("password");
+const inputConfirmPassword = document.getElementById("confirm-password");
+const inputBirthday = document.getElementById("birthday");
+const inputNewsletter = document.getElementById("check-newsletter");
+const buttonSubmit = document.getElementById("submit");
 
-getFirstName.addEventListener("change", () => {
-  const value = getFirstName.value.trim();
-  const regex = /^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/;
-
-  if (!regex.test(value)) {
-    alert("Debes ingresar solamente texto, no números ni símbolos");
-    getFirstName.value = "";
-  }
-});
-
-getLastName.addEventListener("change", () => {
-  const value = getLastName.value.trim();
-  const regex = /^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/;
-
-  if (!regex.test(value)) {
-    alert("Debes ingresar solamente texto, no números ni símbolos");
-    getLastName.value = "";
-  }
-});
-
-getUsername.addEventListener("change", () => {
-  const value = getUsername.value.trim();
-  const regex = /^[A-Za-z]\w{5,29}$/;
-
-  if (!regex.test(value)) {
-    alert(
-      "Sólo puedes agregar letras, números y _ , sin espacios ni otros símbolos"
-    );
-    getUsername.value = "";
-  }
-});
-
-const testPasswords = () => {
-  const firstPassword = getPassword.value;
-  const secondPassword = getConfirmPassword.value;
-
-  if (firstPassword !== secondPassword) {
-    alert("Las contraseñas no coinciden");
-    getConfirmPassword.value = "";
-  }
-};
-getConfirmPassword.addEventListener("change", testPasswords);
-
-getNewsletter.addEventListener("change", () => {
-  if (getNewsletter.checked) {
-    alert("Recibirás todas nuestras novedades");
-  } else {
-    alert("No recibirás nuestras novedades");
-  }
-});
-
-const submitData = () => {
-  if (
-    !getFirstName.value ||
-    !getLastName.value ||
-    !getUsername.value ||
-    !getPassword.value ||
-    !getConfirmPassword.value ||
-    !getBirthday.value
-  ) {
-    alert(" Debes completar todos los campos");
-  } else {
-    alert("Tus datos están correctos");
-    window.location.reload();
-  }
-};
-submitButton.addEventListener("click", submitData);
+try {
+  inputFirstName.addEventListener("change", () => {
+    const value = inputFirstName.value.trim();
+    const regex = /^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/;
+  
+    if (!regex.test(value)) {
+      alert("Debes ingresar solamente texto, no números ni símbolos");
+      inputFirstName.value = "";
+    }
+  });
+  
+  inputLastName.addEventListener("change", () => {
+    const value = inputLastName.value.trim();
+    const regex = /^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/;
+  
+    if (!regex.test(value)) {
+      alert("Debes ingresar solamente texto, no números ni símbolos");
+      inputLastName.value = "";
+    }
+  });
+  
+  inputUsername.addEventListener("change", () => {
+    const value = inputUsername.value.trim();
+    const regex = /^[A-Za-z]\w{5,29}$/;
+  
+    if (!regex.test(value)) {
+      alert(
+        "Sólo puedes agregar letras, números y _ , sin espacios ni otros símbolos"
+      );
+      inputUsername.value = "";
+    }
+  });
+  
+  const testPasswords = () => {
+    const firstPassword = inputPassword.value;
+    const secondPassword = inputConfirmPassword.value;
+  
+    if (firstPassword !== secondPassword) {
+      alert("Las contraseñas no coinciden");
+      inputConfirmPassword.value = "";
+    }
+  };
+  inputConfirmPassword.addEventListener("change", testPasswords);
+  
+  inputNewsletter.addEventListener("change", () => {
+    if (inputNewsletter.checked) {
+      alert("Recibirás todas nuestras novedades");
+    } else {
+      alert("No recibirás nuestras novedades");
+    }
+  });
+  
+  const submitData = () => {
+    if (
+    !inputFirstName.value ||
+      !inputLastName.value ||
+      !inputUsername.value ||
+      !inputPassword.value ||
+      !inputConfirmPassword.value ||
+      !inputBirthday.value
+    ) {
+      alert(" Debes completar todos los campos");
+    } else {
+      alert("Tus datos están correctos");
+      window.location.reload();
+    }
+  };
+  buttonSubmit.addEventListener("click", submitData); 
+} catch (error) {
+  console.error(error)
+}
