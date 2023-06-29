@@ -10,6 +10,9 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: var(--background);
   color: var(--text);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -44,15 +47,36 @@ input {
   border-width: 3px;
 }
 
-#birthday,
-#check-newsletter {
-  margin-bottom: 0;
-}
-
 input:focus {
   background-color: var(--inputselected);
   outline: none;
   transition: 0.2s;
+}
+
+label {
+  text-align: center;
+  padding-right: 1em;
+  font-weight: bold;
+  text-shadow: 1px 3px 0px var(--details);
+}
+
+button {
+  padding: 0.5em 1em;
+  font-weight: bold;
+  border: none;
+  background-color: var(--details);
+  margin-bottom: 1em;
+}
+
+button:hover {
+  background-color: var(--text);
+  color: var(--background);
+  transition: all 0.2s ease-in-out;
+}
+
+#birthday,
+#check-newsletter {
+  margin-bottom: 0;
 }
 
 #div-birthday,
@@ -70,28 +94,7 @@ input:focus {
   transform: scale(2);
 }
 
-label {
-  text-align: center;
-  padding-right: 1em;
-  font-weight: bold;
-  text-shadow: 1px 3px 0px var(--details);
-}
-
 #birthday,
 #check-newsletter {
   width: auto;
-}
-
-button {
-  padding: 0.5em 1em;
-  font-weight: bold;
-  border: none;
-  background-color: var(--details);
-  margin-bottom: 1em;
-}
-
-button:hover {
-  background-color: var(--text);
-  color: var(--background);
-  transition: 0.2s;
 }
